@@ -49,12 +49,3 @@ document.getElementById("clearSchedulesButton").addEventListener("click", () => 
   }
 });
 
-// Handle "Back to Home" button click
-document.getElementById("backToHomeButton").addEventListener("click", () => {
-  location.href = "index.html"; // Redirect to the home page
-});
-
-// Clear schedules when the tab or window is closed
-window.addEventListener("unload", () => {
-  localStorage.removeItem("schedules");
-});
