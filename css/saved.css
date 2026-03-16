@@ -72,6 +72,14 @@ body {
     margin: 0;
     color: #555;
   }
+
+  .no-classes {
+    color: #aaa;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+  }
   
   /* Back to Home Button */
 .home-btn {
