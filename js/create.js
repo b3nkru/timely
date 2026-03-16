@@ -7,13 +7,13 @@ document.getElementById("scheduleForm").addEventListener("submit", function (eve
 
   // Get input values from the form
   const scheduleName = document.getElementById("scheduleName").value.trim();
-  const daysOfWeek = document.getElementById("daysOfWeek").value.split(',').map(day => day.trim());
+  const daysOfWeek = Array.from(document.querySelectorAll('input[name="day"]:checked')).map(cb => cb.value);
   const startTime = document.getElementById("startTime").value;
   const endTime = document.getElementById("endTime").value;
 
   // Validate input
-  if (!scheduleName || !daysOfWeek || !startTime || !endTime) {
-    alert("Please fill out all fields!");
+  if (!scheduleName || daysOfWeek.length === 0 || !startTime || !endTime) {
+    alert("Please fill out all fields and select at least one day!");
     return;
   }
 
@@ -58,7 +58,7 @@ document.getElementById("scheduleForm").addEventListener("submit", function (eve
 
   // Clear the form fields
   document.getElementById("scheduleName").value = "";
-  document.getElementById("daysOfWeek").value = "";
+  document.querySelectorAll('input[name="day"]').forEach(cb => cb.checked = false);
   document.getElementById("startTime").value = "";
   document.getElementById("endTime").value = "";
 

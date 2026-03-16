@@ -16,10 +16,18 @@
         <input type="text" id="scheduleName" name="scheduleName" required>
       </div>
 
-      <!-- Days of the week input for classes -->
+      <!-- Days of the week checkboxes -->
       <div class="input-group">
-        <label for="daysOfWeek">Days of the Week (comma separated, e.g., Monday, Wednesday)</label>
-        <input type="text" id="daysOfWeek" name="daysOfWeek" placeholder="Monday, Wednesday, Friday" required>
+        <label>Days of the Week</label>
+        <div class="days-checkboxes" id="daysOfWeek">
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Monday"> Monday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Tuesday"> Tuesday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Wednesday"> Wednesday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Thursday"> Thursday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Friday"> Friday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Saturday"> Saturday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Sunday"> Sunday</label>
+        </div>
       </div>
 
       <!-- Time input for start and end -->
