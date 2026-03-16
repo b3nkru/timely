@@ -4,29 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timely - Current Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/saved.css">
 </head>
 <body>
-  <header class="header">
-    <h1>Current Schedule</h1>
-  </header>
-  
 
-  <!-- Horizontal Calendar -->
-  <div id="calendarContainer" class="calendar-container"></div>
+  <div class="page-wrapper">
+    <header class="header">
+      <span class="header-prompt">~/schedule</span>
+      <h1>Current Schedule</h1>
+    </header>
 
-  <div class="create-container">
-    <button class="create-btn" onclick="location.href='create.html'">Add Another Class</button>    
-  </div>
-  
-  <div class="container">
-    <button class="home-btn" onclick="location.href='index.html'">Back to Home</button>
-  </div>
+    <div id="calendarContainer" class="calendar-container"></div>
 
-  <div class="clear-container">
-    <button id="clearSchedulesButton" class="clear-button">Clear Schedules</button>
+    <div class="action-bar">
+      <button class="home-btn" onclick="location.href='create.html'">+ Add Another Class</button>
+      <button class="home-btn" onclick="location.href='index.html'">← Home</button>
+      <button id="clearSchedulesButton" class="clear-button">⚠ Clear All</button>
+    </div>
   </div>
-  
 
   <script src="js/saved.js"></script>
 </body>
