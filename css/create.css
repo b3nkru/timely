@@ -1,145 +1,198 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #0d1117;
+  background-image:
+    linear-gradient(rgba(88, 166, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 166, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
 }
 
-/* Create Schedule Page Styles */
 .create-schedule-container {
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .create-schedule-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .create-schedule-container h1 {
-    font-size: 24px;
-    color: #007bff;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .create-schedule-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .input-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-  
-  input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .save-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 10px;
-  }
-  
-  .save-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Error Message Styling */
-  .error-message {
-    color: red;
-    font-size: 12px;
-    text-align: center;
-  }
-  
-  /* Back to Home Button */
-  .home-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 10px;
-  }
-  
-  .home-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
+  width: 100%;
+  max-width: 560px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 36px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
 
-  .days-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 5px;
-  }
+.timely-logo {
+  height: 70px;
+  width: auto;
+  display: block;
+  margin: 0 auto 16px;
+  opacity: 0.95;
+}
 
-  .checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-    color: #555;
-    cursor: pointer;
-    margin: 0;
-  }
+.create-schedule-container h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #e6edf3;
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+}
 
-  .checkbox-label input[type="checkbox"] {
-    width: auto;
-    margin: 0;
-    cursor: pointer;
-  }
+.create-schedule-container h1::before {
+  content: '$ ';
+  color: #3fb950;
+}
 
-  .timely-logo {
-    height: 115px;
-    margin-bottom: 20px;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+/* Form layout */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="time"] {
+  width: 100%;
+  padding: 10px 14px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #c9d1d9;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]::placeholder {
+  color: #484f58;
+}
+
+input[type="text"]:focus,
+input[type="time"]:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.12);
+}
+
+/* Day checkboxes */
+.days-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-label span,
+.checkbox-label {
+  /* pill toggle appearance */
+}
+
+/* Style as pill toggles using the label text directly */
+.checkbox-label {
+  padding: 6px 14px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #8b949e;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  width: auto;
+}
+
+.checkbox-label:has(input:checked) {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: #58a6ff;
+  color: #79c0ff;
+}
+
+.checkbox-label:hover {
+  border-color: #58a6ff;
+  color: #c9d1d9;
+}
+
+/* Buttons */
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: #238636;
+  color: #ffffff;
+  border: 1px solid #2ea043;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  margin-top: 8px;
+  letter-spacing: 0.2px;
+}
+
+.save-btn:hover {
+  background: #2ea043;
+  box-shadow: 0 0 12px rgba(46, 160, 67, 0.3);
+}
+
+.save-btn:active {
+  background: #238636;
+}
+
+.home-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  text-align: center;
+}
+
+.home-btn:hover {
+  background: rgba(139, 148, 158, 0.08);
+  color: #c9d1d9;
+  border-color: #8b949e;
 }

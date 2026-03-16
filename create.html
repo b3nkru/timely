@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timely - Add Classes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/create.css">
 </head>
 <body>
@@ -13,35 +16,38 @@
     <form id="scheduleForm">
       <div class="input-group">
         <label for="scheduleName">Class Name</label>
-        <input type="text" id="scheduleName" name="scheduleName" required>
+        <input type="text" id="scheduleName" name="scheduleName" placeholder="e.g. Calculus II" required>
       </div>
 
       <!-- Days of the week checkboxes -->
       <div class="input-group">
         <label>Days of the Week</label>
         <div class="days-checkboxes" id="daysOfWeek">
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Monday"> Monday</label>
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Tuesday"> Tuesday</label>
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Wednesday"> Wednesday</label>
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Thursday"> Thursday</label>
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Friday"> Friday</label>
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Saturday"> Saturday</label>
-          <label class="checkbox-label"><input type="checkbox" name="day" value="Sunday"> Sunday</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Monday"> Mon</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Tuesday"> Tue</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Wednesday"> Wed</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Thursday"> Thu</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Friday"> Fri</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Saturday"> Sat</label>
+          <label class="checkbox-label"><input type="checkbox" name="day" value="Sunday"> Sun</label>
         </div>
       </div>
 
       <!-- Time input for start and end -->
-      <div class="input-group">
-        <label for="startTime">Start Time</label>
-        <input type="time" id="startTime" name="startTime" required>
+      <div class="time-row">
+        <div class="input-group">
+          <label for="startTime">Start Time</label>
+          <input type="time" id="startTime" name="startTime" required>
+        </div>
+        <div class="input-group">
+          <label for="endTime">End Time</label>
+          <input type="time" id="endTime" name="endTime" required>
+        </div>
       </div>
-      <div class="input-group">
-        <label for="endTime">End Time</label>
-        <input type="time" id="endTime" name="endTime" required>
-      </div>
-      <button type="submit" class="save-btn">Add Class</button>
+
+      <button type="submit" class="save-btn">+ Add Class</button>
     </form>
-    <button class="home-btn" onclick="location.href='index.html'">Back to Home</button>
+    <button class="home-btn" onclick="location.href='index.html'">← Back to Home</button>
   </div>
   <script src="js/create.js"></script>
 </body>
